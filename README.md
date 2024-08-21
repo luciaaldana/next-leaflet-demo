@@ -5,7 +5,7 @@
 [x] Implementa una visualización de mapas utilizando Leaflet o cualquier otra biblioteca
 de mapas que prefieras (ej., Mapbox, Google Maps).
 
-[ ] En el mapa, muestra un pin para cada país obtenido desde la API GraphQL,
+[x] En el mapa, muestra un pin para cada país obtenido desde la API GraphQL,
 utilizando las coordenadas de latitud y longitud disponibles en el archivo
 countries.json.
 
