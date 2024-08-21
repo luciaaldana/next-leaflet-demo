@@ -2,7 +2,7 @@
 
 [ ] Utiliza typescript para definir las interfaces necesarias.
 
-[ ] Implementa una visualización de mapas utilizando Leaflet o cualquier otra biblioteca
+[x] Implementa una visualización de mapas utilizando Leaflet o cualquier otra biblioteca
 de mapas que prefieras (ej., Mapbox, Google Maps).
 
 [ ] En el mapa, muestra un pin para cada país obtenido desde la API GraphQL,
