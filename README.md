@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[x] Utiliza Next.js como el framework principal para la construcción de la aplicación.
 
-## Getting Started
+[ ] Utiliza typescript para definir las interfaces necesarias.
 
-First, run the development server:
+[ ] Implementa una visualización de mapas utilizando Leaflet o cualquier otra biblioteca
+de mapas que prefieras (ej., Mapbox, Google Maps).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[ ] En el mapa, muestra un pin para cada país obtenido desde la API GraphQL,
+utilizando las coordenadas de latitud y longitud disponibles en el archivo
+countries.json.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[ ] Consume la API GraphQL de countries.trevorblades.com para obtener información
+sobre los países, incluye todas las que creas necesarias..
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[ ] Implementa un manejo de errores.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[ ] Puedes emplear bibliotecas como TailwindCSS o MaterialUI para agilizar el
+desarrollo del frontend.
 
-## Learn More
+[ ] Calidad, prolijidad y seguridad de tu código.
 
-To learn more about Next.js, take a look at the following resources:
+[ ] Uso de funcionalidades que aporta el framework.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[ ] Interfaz intuitiva y agradable.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[ ] Experiencia de usuario.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[ ] Buen manejo de la responsividad.
