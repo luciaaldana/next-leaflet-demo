@@ -1,19 +1,48 @@
 import { LatLngExpression, LatLngTuple } from 'leaflet';
 
-export interface ICountriesApi {
-  name: string;
-  code: string;
+export enum Continent {
+  Africa = 'Africa',
+  Europe = 'Europe',
+  Asia = 'Asia',
+  NorthAmerica = 'North America',
+  SouthAmerica = 'South America',
+  Oceania = 'Oceania',
+  Antarctica = 'Antarctica',
 }
 
-export interface ICountriesWithCoords {
-  name: string;
+interface ICountryDetails {
+  capital: string;
+  currency: string;
+  continent: Continent;
+  languages: string;
+}
+
+export interface ICountry {
   code: string;
+  name: string;
+  emoji: string;
+  details: ICountryDetails;
+}
+
+export interface ICountryWithCoords extends ICountry {
   latitude: number;
   longitude: number;
 }
 
-export interface MapProps {
-  posix?: LatLngExpression | LatLngTuple;
-  zoom?: number;
-  countries: ICountriesWithCoords[];
+export type TLanguage = {
+  name: string;
+};
+
+type ContinentName = {
+  name: Continent;
+};
+
+export interface ICountriesApiResponse {
+  code: string;
+  name: string;
+  capital: string;
+  emoji: string;
+  currency: string;
+  languages: TLanguage[];
+  continent: ContinentName;
 }

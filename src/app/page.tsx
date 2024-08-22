@@ -5,9 +5,10 @@ import { ApolloProvider } from '@apollo/client';
 import client from '@/services/apollo-client';
 import { fetchCountries } from '@/utils/fetchCountries';
 import Spinner from '@/components/Spinner';
+import { ICountryWithCoords } from '@/types/types';
 
 export function Home() {
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useState<ICountryWithCoords[]>([]);
 
   const Map = useMemo(
     () =>
@@ -17,7 +18,6 @@ export function Home() {
             <Spinner />
           </div>
         ),
-
         ssr: false,
       }),
     []
@@ -25,8 +25,8 @@ export function Home() {
 
   useEffect(() => {
     const loadCountries = async () => {
-      const countriesWithCoords = await fetchCountries();
-      setCountries(countriesWithCoords);
+      const res = await fetchCountries();
+      setCountries(res);
     };
 
     loadCountries();
