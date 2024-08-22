@@ -12,7 +12,7 @@ countries.json.
 [x] Consume la API GraphQL de countries.trevorblades.com para obtener información
 sobre los países, incluye todas las que creas necesarias.
 
-[ ] Añade un componente de búsqueda que permita a los usuarios buscar países por nombre, región o código ISO. La búsqueda debe actualizar dinámicamente los pines en el mapa.
+[x] Añade un componente de búsqueda que permita a los usuarios buscar países por nombre, región o código ISO. La búsqueda debe actualizar dinámicamente los pines en el mapa.
 
 [ ] Implementa un manejo de errores.
 

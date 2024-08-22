@@ -1,6 +1,4 @@
-import { LatLngExpression, LatLngTuple } from 'leaflet';
-
-export enum Continent {
+export enum EContinent {
   Africa = 'Africa',
   Europe = 'Europe',
   Asia = 'Asia',
@@ -13,7 +11,7 @@ export enum Continent {
 interface ICountryDetails {
   capital: string;
   currency: string;
-  continent: Continent;
+  continent: EContinent;
   languages: string;
 }
 
@@ -21,6 +19,7 @@ export interface ICountry {
   code: string;
   name: string;
   emoji: string;
+  region: string;
   details: ICountryDetails;
 }
 
@@ -33,8 +32,8 @@ export type TLanguage = {
   name: string;
 };
 
-type ContinentName = {
-  name: Continent;
+type TContinentName = {
+  name: EContinent;
 };
 
 export interface ICountriesApiResponse {
@@ -44,5 +43,13 @@ export interface ICountriesApiResponse {
   emoji: string;
   currency: string;
   languages: TLanguage[];
-  continent: ContinentName;
+  continent: TContinentName;
+  awsRegion: string;
+}
+
+export interface ISearchInput<T extends Record<string, any>> {
+  placeholder?: string;
+  data: T[];
+  setFilteredData: (data: T[]) => void;
+  filterKeys: string[];
 }

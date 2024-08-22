@@ -5,16 +5,22 @@ import { ApolloProvider } from '@apollo/client';
 import client from '@/services/apollo-client';
 import { fetchCountries } from '@/utils/fetchCountries';
 import Spinner from '@/components/Spinner';
+import SearchInput from '@/components/SearchInput';
 import { ICountryWithCoords } from '@/types/types';
 
 export function Home() {
   const [countries, setCountries] = useState<ICountryWithCoords[]>([]);
+  const [filteredCountries, setFilteredCountries] = useState<ICountryWithCoords[]>(countries);
+
+  useEffect(() => {
+    setFilteredCountries(countries);
+  }, [countries]);
 
   const Map = useMemo(
     () =>
       dynamic(() => import('@/components/Map/'), {
         loading: () => (
-          <div className="bg-purple-900/30 border border-purple-700 rounded-lg h-3/4 w-full  flex items-center justify-center">
+          <div className="bg-purple-900/30 border border-purple-700 rounded-lg h-3/4 w-full max-w-screen-lg flex items-center justify-center">
             <Spinner />
           </div>
         ),
@@ -34,8 +40,14 @@ export function Home() {
 
   return (
     <ApolloProvider client={client}>
-      <main className="p-2 w-screen h-screen flex items-center justify-center">
-        <Map countries={countries} />
+      <main className="p-2 w-screen h-screen flex items-center mt-5 sm:mt-0 sm:justify-center flex-col gap-4">
+        <SearchInput
+          data={countries}
+          setFilteredData={setFilteredCountries}
+          filterKeys={['name', 'code', 'region']}
+          placeholder="Search by name, code or region..."
+        />
+        <Map countries={filteredCountries} />
       </main>
     </ApolloProvider>
   );

@@ -11,6 +11,7 @@ const GET_COUNTRIES = gql`
       capital
       emoji
       currency
+      awsRegion
       languages {
         name
       }
@@ -34,6 +35,7 @@ export const fetchCountries = async (): Promise<ICountryWithCoords[]> => {
       name: country.name,
       emoji: country.emoji,
       code: country.code,
+      region: country.awsRegion,
       details: {
         continent: country.continent.name,
         capital: country.capital,
