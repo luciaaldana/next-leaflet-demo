@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
-import countriesData from '@/data/countries.json';
+import { toast } from 'sonner';
 import client from '@/services/apollo-client';
+import countriesData from '@/data/countries.json';
 import { ICountry, ICountriesApiResponse, ICountryWithCoords, TLanguage } from '@/types/types';
 
 const GET_COUNTRIES = gql`
@@ -31,6 +32,10 @@ export const fetchCountries = async (): Promise<ICountryWithCoords[]> => {
   try {
     const { data, loading, error } = await client.query({ query: GET_COUNTRIES });
 
+    if (error) {
+      throw error;
+    }
+
     const transformedCountries = data.countries.map((country: ICountriesApiResponse) => ({
       name: country.name,
       emoji: country.emoji,
@@ -56,7 +61,7 @@ export const fetchCountries = async (): Promise<ICountryWithCoords[]> => {
       .filter((country: ICountryWithCoords) => country.latitude && country.longitude);
     return countriesWithCoords;
   } catch (error) {
-    console.error('Error fetching countries', error);
+    toast.error('Error fetching countries');
     return [];
   }
 };

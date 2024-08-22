@@ -40,10 +40,11 @@ export function Home() {
 
   return (
     <ApolloProvider client={client}>
-      <main className="p-2 w-screen h-screen flex items-center mt-5 sm:mt-0 sm:justify-center flex-col gap-4">
+      <main className="p-2 w-screen h-screen flex items-center mt-5 sm:mt-0 sm:justify-center flex-col gap-8">
         <SearchInput
           data={countries}
           setFilteredData={setFilteredCountries}
+          filteredData={filteredCountries}
           filterKeys={['name', 'code', 'region']}
           placeholder="Search by name, code or region..."
         />

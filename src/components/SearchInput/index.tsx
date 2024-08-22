@@ -7,6 +7,7 @@ const SearchInput = <T extends Record<string, any>>({
   placeholder = 'Search...',
   data,
   setFilteredData,
+  filteredData,
   filterKeys,
 }: ISearchInput<T>): JSX.Element => {
   const [inputValue, setInputValue] = useState('');
@@ -34,21 +35,28 @@ const SearchInput = <T extends Record<string, any>>({
   };
 
   return (
-    <div className="w-full 4 max-w-screen-lg relative">
-      <input
-        type="text"
-        placeholder={placeholder}
-        className="w-full p-2 text-sm outline-none  border rounded-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-50 focus:border-purple-700"
-        value={inputValue}
-        onChange={handleInputChange}
-      />
-      {inputValue === '' ? (
-        <MdOutlineSearch className="text-base absolute top-1/2 transform -translate-y-1/2 right-2 pointer-events-none text-gray-400" />
-      ) : (
-        <MdClear
-          className="text-base absolute top-1/2 transform -translate-y-1/2 right-2 cursor-pointer text-rose-400"
-          onClick={handleClearInput}
+    <div className="w-full max-w-screen-lg relative">
+      <div className="w-full max-w-screen-lg relative">
+        <input
+          type="text"
+          placeholder={placeholder}
+          className="w-full p-2 text-sm outline-none  border rounded-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-50 focus:border-purple-700"
+          value={inputValue}
+          onChange={handleInputChange}
         />
+        {inputValue === '' ? (
+          <MdOutlineSearch className="text-base absolute top-1/2 transform -translate-y-1/2 right-2 pointer-events-none text-gray-400" />
+        ) : (
+          <MdClear
+            className="text-base absolute top-1/2 transform -translate-y-1/2 right-2 cursor-pointer text-rose-400"
+            onClick={handleClearInput}
+          />
+        )}
+      </div>
+      {data.length > 0 && filteredData.length === 0 && (
+        <p role="alert" className="text-rose-400 text-sm absolute bottom-0 transform translate-y-6">
+          No results were found for your search.
+        </p>
       )}
     </div>
   );

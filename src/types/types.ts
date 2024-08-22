@@ -51,5 +51,6 @@ export interface ISearchInput<T extends Record<string, any>> {
   placeholder?: string;
   data: T[];
   setFilteredData: (data: T[]) => void;
+  filteredData: T[];
   filterKeys: string[];
 }
