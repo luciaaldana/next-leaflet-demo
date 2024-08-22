@@ -14,7 +14,7 @@ sobre los países, incluye todas las que creas necesarias.
 
 [x] Añade un componente de búsqueda que permita a los usuarios buscar países por nombre, región o código ISO. La búsqueda debe actualizar dinámicamente los pines en el mapa.
 
-[ ] Implementa un manejo de errores.
+[x] Implementa un manejo de errores.
 
 [x] Puedes emplear bibliotecas como TailwindCSS o MaterialUI para agilizar el
 desarrollo del frontend.
