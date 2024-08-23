@@ -23,8 +23,20 @@ desarrollo del frontend.
 
 [ ] Uso de funcionalidades que aporta el framework.
 
-[ ] Interfaz intuitiva y agradable.
+[x] Interfaz intuitiva y agradable.
 
-[ ] Experiencia de usuario.
+[x] Experiencia de usuario.
 
-[ ] Buen manejo de la responsividad.
+[x] Buen manejo de la responsividad.
+
+[x] Cambiar icono
+[x] cambiar nombre
+[x] agregar metadata
+[] Escribir readme
+Descripcion del proyecto
+Qué utilicé
+Cómo arrancarlo
+Cómo forzar un error
+[] Crear not found
+[] Crear Error.tsx
+[] Crear Loading.tsx

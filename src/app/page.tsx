@@ -46,7 +46,7 @@ export function Home() {
           setFilteredData={setFilteredCountries}
           filteredData={filteredCountries}
           filterKeys={['name', 'code', 'region']}
-          placeholder="Search by name, code or region..."
+          placeholder="Search country by name, code or region..."
         />
         <Map countries={filteredCountries} />
       </main>
