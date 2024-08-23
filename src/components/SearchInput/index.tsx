@@ -18,17 +18,17 @@ const SearchInput = <T extends Record<string, any>>({
 
   const debouncedFromText = useDebounce(inputValue);
 
-  const filterData = () => {
-    if (debouncedFromText === '') return setFilteredData(data);
-    const filtered = data.filter((item) =>
-      filterKeys.some((key) => item[key]?.toString().toLowerCase().startsWith(debouncedFromText.toLowerCase()))
-    );
-    setFilteredData(filtered);
-  };
-
   useEffect(() => {
+    const filterData = () => {
+      if (debouncedFromText === '') return setFilteredData(data);
+      const filtered = data.filter((item) =>
+        filterKeys.some((key) => item[key]?.toString().toLowerCase().startsWith(debouncedFromText.toLowerCase()))
+      );
+      setFilteredData(filtered);
+    };
+
     filterData();
-  }, [debouncedFromText, data]);
+  }, [debouncedFromText, data, filterKeys, setFilteredData]);
 
   const handleClearInput = () => {
     setInputValue('');

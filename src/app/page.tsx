@@ -8,7 +8,7 @@ import Spinner from '@/components/Spinner';
 import SearchInput from '@/components/SearchInput';
 import { ICountryWithCoords } from '@/types/types';
 
-export function Home() {
+function Home(): JSX.Element {
   const [countries, setCountries] = useState<ICountryWithCoords[]>([]);
   const [filteredCountries, setFilteredCountries] = useState<ICountryWithCoords[]>(countries);
 

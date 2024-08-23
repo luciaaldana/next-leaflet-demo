@@ -9,7 +9,7 @@ export default function NotFound() {
       </div>
       <div className="flex flex-col gap-2 justify-between items-start px-8">
         <h1 className="text-2xl font-semibold md:text-4xl">404 Not Found</h1>
-        <p className="text-sm md:text-xl">Oops! We can't seem to find the page you are looking for.</p>
+        <p className="text-sm md:text-xl">Oops! We can&apos;t seem to find the page you are looking for.</p>
         <Link href="/" className="text-sm border-purple-700 rounded-lg bg-purple-900 px-4 py-2 mt-2">
           Return Home
         </Link>
