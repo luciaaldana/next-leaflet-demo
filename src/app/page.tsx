@@ -40,7 +40,7 @@ function Home(): JSX.Element {
 
   return (
     <ApolloProvider client={client}>
-      <main className="p-8 w-screen h-screen flex items-center mt-5 sm:mt-0 sm:justify-center flex-col gap-8">
+      <main className="p-8 w-screen h-screen min-w-72 flex items-center mt-5 sm:mt-0 sm:justify-center flex-col gap-8">
         <SearchInput
           data={countries}
           setFilteredData={setFilteredCountries}
