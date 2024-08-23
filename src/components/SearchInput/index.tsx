@@ -28,7 +28,7 @@ const SearchInput = <T extends Record<string, any>>({
     };
 
     filterData();
-  }, [debouncedFromText, data, filterKeys, setFilteredData]);
+  }, [debouncedFromText, data]);
 
   const handleClearInput = () => {
     setInputValue('');
@@ -40,7 +40,7 @@ const SearchInput = <T extends Record<string, any>>({
         <input
           type="text"
           placeholder={placeholder}
-          className="w-full p-2 text-sm outline-none  border rounded-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-50 focus:border-purple-700"
+          className="w-full p-2 pr-8 text-sm outline-none border rounded-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-50 focus:border-purple-700 overflow-ellipsis whitespace-nowrap"
           value={inputValue}
           onChange={handleInputChange}
         />
@@ -54,7 +54,7 @@ const SearchInput = <T extends Record<string, any>>({
         )}
       </div>
       {data.length > 0 && filteredData.length === 0 && (
-        <p role="alert" className="text-rose-400 text-sm absolute bottom-0 transform translate-y-6">
+        <p role="alert" className="text-rose-400 text-xs absolute bottom-0 transform translate-y-6">
           No results were found for your search.
         </p>
       )}
