@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useMemo, useState } from 'react';
 import { ApolloProvider } from '@apollo/client';
 import client from '@/services/apollo-client';
-import { fetchCountries } from '@/utils/fetchCountries';
+import { fetchCountries } from '@/helpers/fetchCountries';
 import Spinner from '@/components/Spinner';
 import SearchInput from '@/components/SearchInput';
 import { ICountryWithCoords } from '@/types/types';
