@@ -1,42 +1,43 @@
-[x] Utiliza Next.js como el framework principal para la construcción de la aplicación.
+# TOTS Challenge
 
-[x] Utiliza typescript para definir las interfaces necesarias.
+## Descripción General
 
-[x] Implementa una visualización de mapas utilizando Leaflet o cualquier otra biblioteca
-de mapas que prefieras (ej., Mapbox, Google Maps).
+Este proyecto es una aplicación web desarrollada con Next.js. Utiliza datos de la API GraphQL de https://countries.trevorblades.com/ para mostrar información interactiva sobre países en un mapa dinámico. Los usuarios pueden buscar países por nombre, región o código ISO y ver cómo los pines en el mapa se actualizan en tiempo real.
 
-[x] En el mapa, muestra un pin para cada país obtenido desde la API GraphQL,
-utilizando las coordenadas de latitud y longitud disponibles en el archivo
-countries.json.
+## Tecnologías Utilizadas
 
-[x] Consume la API GraphQL de countries.trevorblades.com para obtener información
-sobre los países, incluye todas las que creas necesarias.
+- Next.js
+- Typescript
+- GraphQL
+- Leaflet
+- Tailwind CSS
 
-[x] Añade un componente de búsqueda que permita a los usuarios buscar países por nombre, región o código ISO. La búsqueda debe actualizar dinámicamente los pines en el mapa.
+## Intrucciones para Instalar y Ejecutar
 
-[x] Implementa un manejo de errores.
+1. **Clonar el repositorio:**
 
-[x] Puedes emplear bibliotecas como TailwindCSS o MaterialUI para agilizar el
-desarrollo del frontend.
+   ```bash
+   git clone https://github.com/luciaaldana/challenge-tots.git
+   cd challenge-tots
+   ```
 
-[ ] Calidad, prolijidad y seguridad de tu código.
+2. **Instalación de dependencias**
 
-[ ] Uso de funcionalidades que aporta el framework.
+   ```bash
+   npm install
+   ```
 
-[x] Interfaz intuitiva y agradable.
+3. Ahora ya podemos **lanzar el proyecto** en modo desarrollo con:
 
-[x] Experiencia de usuario.
+   ```bash
+   npm run dev
+   ```
 
-[x] Buen manejo de la responsividad.
+   o bien podemos compilarlo con y lanzarlo con:
 
-[x] Cambiar icono
-[x] cambiar nombre
-[x] agregar metadata
-[] Escribir readme
-Descripcion del proyecto
-Qué utilicé
-Cómo arrancarlo
-Cómo forzar un error
-[] Crear not found
-[] Crear Error.tsx
-[] Crear Loading.tsx
+   ```bash
+   npm run build
+   npm run start
+   ```
+
+4. Visita [http://localhost:3000](http://localhost:3000) para ver la aplicación en tu navegador.
