@@ -39,15 +39,15 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Bump version
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: npx standard-version
-
       - name: Set Git user
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
-          git config user.name "luciaaldana"
-          git config user.email "luciaaldanacastillo@gmail.com"
+          git config --global user.name "Nombre del Owner"
+          git config --global user.email "correo@delowner.com"
+
+      - name: Bump version
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: npx standard-version
 
       - name: Push changes
         if: steps.check_changes.outputs.has_changes == 'true'
