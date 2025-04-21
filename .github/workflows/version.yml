@@ -42,8 +42,8 @@ jobs:
       - name: Set Git user
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
-          git config --global user.name "Nombre del Owner"
-          git config --global user.email "correo@delowner.com"
+          git config --global user.name "luciaaldana"
+          git config --global user.email "luciaaldanacastillo@gmail.com"
 
       - name: Who am I?
         if: steps.check_changes.outputs.has_changes == 'true'
