@@ -63,4 +63,6 @@ jobs:
           git config --global user.name "luciaaldana"
           git config --global user.email "luciaaldana@gmail.com"
           git remote set-url origin https://your_username:${GH_TOKEN}@github.com/${{ github.repository }}
-          git push origin HEAD:main --follow-tags
+          git add .
+          git commit -m "generated"
+          git push origin main
