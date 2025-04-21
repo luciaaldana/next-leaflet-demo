@@ -59,7 +59,5 @@ jobs:
           GH_TOKEN: ${{ secrets.OWNER_TOKEN }}
         run: |
           git config --global credential.helper ""
-          git config --global user.name "luciaaldana"
-          git config --global user.email "luciaaldana@gmail.com"
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
           git push origin HEAD:main --follow-tags
