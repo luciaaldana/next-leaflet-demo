@@ -43,17 +43,6 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Set Git user
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
-          git config --global user.name "luciaaldana"
-          git config --global user.email "luciaaldana@gmail.com"
-
-      - name: Probar acceso con token
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
-          curl -H "Authorization: token ${{ secrets.OWNER_TOKEN }}" https://api.github.com/user
-
       - name: Bump version
         if: steps.check_changes.outputs.has_changes == 'true'
         run: npx standard-version
