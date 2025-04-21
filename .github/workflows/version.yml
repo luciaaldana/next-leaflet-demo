@@ -63,6 +63,4 @@ jobs:
           git config --global user.name "luciaaldana"
           git config --global user.email "luciaaldana@gmail.com"
           git remote set-url origin https://your_username:${GH_TOKEN}@github.com/${{ github.repository }}
-          git add .
-          git commit -m "chore: version bump [skip ci]"
           git push 
