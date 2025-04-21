@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/luciaaldana/next-leaflet-demo/compare/v0.1.1...v0.1.2) (2025-04-21)
+
+
+### Features
+
+* probando auto bump ([5ed88fc](https://github.com/luciaaldana/next-leaflet-demo/commit/5ed88fc19948e7134323c807942a00ffd423c820))
+* probando auto bump ([f6882e4](https://github.com/luciaaldana/next-leaflet-demo/commit/f6882e4733f584aa6e4b7ae7e01f04b6a68f11b9))
+
 ### 0.1.1 (2025-04-21)
 
 
