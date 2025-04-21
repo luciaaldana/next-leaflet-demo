@@ -48,7 +48,7 @@ jobs:
       - name: Probar acceso con token
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
-          curl -H "Authorization: token ${{ secrets.GH_OWNER_TOKEN }}" https://api.github.com/user
+          curl -H "Authorization: token ${{ secrets.OWNER_TOKEN }}" https://api.github.com/user
 
       - name: Bump version
         if: steps.check_changes.outputs.has_changes == 'true'
@@ -57,10 +57,12 @@ jobs:
       - name: Push version bump
         if: steps.check_changes.outputs.has_changes == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GH_OWNER_TOKEN }}
+          GH_TOKEN: ${{ secrets.OWNER_TOKEN }}
         run: |
           git config --global credential.helper ""
           git config --global user.name "luciaaldana"
           git config --global user.email "luciaaldana@gmail.com"
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
+          git remote set-url origin https://your_username:${GH_TOKEN}@github.com/${{ github.repository }}
+          git add .
+          git commit -am "Automated report"
           git push origin HEAD:main --follow-tags
