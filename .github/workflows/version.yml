@@ -65,4 +65,4 @@ jobs:
           git remote set-url origin https://your_username:${GH_TOKEN}@github.com/${{ github.repository }}
           git add .
           git commit -m "generated"
-          git push origin main
+          git push 
