@@ -56,11 +56,16 @@ jobs:
       - name: Set remote with token
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GH_OWNER_TOKEN }}@github.com/${{ github.repository }}.git
+          git remote set-url origin https://x-access-token:${{ secrets.OWNER_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: Show remote URL
         if: steps.check_changes.outputs.has_changes == 'true'
         run: git remote -v
+
+      - name: Probar acceso con token
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          curl -H "Authorization: token ${{ secrets.OWNER_TOKEN }}" https://api.github.com/user
 
       - name: Push changes
         if: steps.check_changes.outputs.has_changes == 'true'
