@@ -45,29 +45,22 @@ jobs:
           git config --global user.name "luciaaldana"
           git config --global user.email "luciaaldanacastillo@gmail.com"
 
-      - name: Who am I?
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: git config --list
-
-      - name: Bump version
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: npx standard-version
-
-      - name: Set remote with token
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.OWNER_TOKEN }}@github.com/${{ github.repository }}.git
-
-      - name: Show remote URL
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: git remote -v
-
       - name: Probar acceso con token
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           curl -H "Authorization: token ${{ secrets.OWNER_TOKEN }}" https://api.github.com/user
 
-      - name: Push changes
+      - name: Bump version
         if: steps.check_changes.outputs.has_changes == 'true'
+        run: npx standard-version
+
+      - name: Push version bump
+        if: steps.check_changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.OWNER_TOKEN }}
         run: |
+          git config --global credential.helper ""
+          git config --global user.name "luciaaldana"
+          git config --global user.email "luciaaldanacastillo@gmail.com"
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
           git push origin HEAD:main --follow-tags
